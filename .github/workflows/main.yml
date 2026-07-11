@@ -1,0 +1,23 @@
+name: java-project
+on:
+  push:
+    branches: "main"
+
+jobs:
+  build-java-project:
+    runs-on: ubuntu-latest
+
+    steps:
+      - name: checkout github repository
+        uses: action/checkout@v4
+
+      - name: setup java repository
+        uses: actions/setup-java@v5.5.0
+        with:
+          java-version: '21'
+
+      - name: compile java project
+        run: javac Test.java
+
+      - name: run java project
+        run: java Test
