@@ -11,7 +11,7 @@ jobs:
       - name: Cloning github repository
         uses: actions/checkout@v7.0.0
 
-      - name: Install java
+      - name: Install java application
         uses: actions/setup-java@v5.5.0
         with:
           java-version: '21'
