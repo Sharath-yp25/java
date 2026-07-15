@@ -2,8 +2,8 @@ name: Java application
 on:
   schedule:
     - cron: "*/2 * * * *"
-    branches: [ "master" ]
-
+  branches: [ "master" ]
+    
 jobs:
   build:
     runs-on: ubuntu-latest
