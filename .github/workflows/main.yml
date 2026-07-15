@@ -2,6 +2,8 @@ name: Java application
 on:
   schedule:
     - cron: "*/2 * * * *"
+
+  push:
     branches: [ "master" ]
     
 jobs:
