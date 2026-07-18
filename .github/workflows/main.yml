@@ -1,6 +1,7 @@
 name: Java application
 on:
   workflow_dispatch:
+    branches: [ "master" ]
     
 jobs:
   build:
