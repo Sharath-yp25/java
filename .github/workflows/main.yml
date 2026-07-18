@@ -4,6 +4,9 @@ on:
     
 jobs:
   build:
+    strategy:
+      matrix:
+        os: [ 17,21 ]
     runs-on: ubuntu-latest
 
     steps:
@@ -13,7 +16,7 @@ jobs:
       - name: Install java application
         uses: actions/setup-java@v5.5.0
         with:
-          java-version: '21'
+          java-version: ${{ matrix.os }}
           distribution: 'temurin'
 
       - name: Compile java project
@@ -25,26 +28,5 @@ jobs:
       - name: Java version
         run: java --version
 
-  run:
-    runs-on: ubuntu-latest
-
-    steps:
-      - name: Cloning github repository
-        uses: actions/checkout@v7.0.0
-  
-      - name: Install java application
-        uses: actions/setup-java@v5.5.0
-        with:
-          java-version: '17'
-          distribution: 'temurin'
-  
-      - name: Compile java project
-        run: javac Test.java
-  
-      - name: Execute java project
-        run: java Test
-
-      - name: Java version
-        run: java --version
-            
+ 
         
