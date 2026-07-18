@@ -22,23 +22,23 @@ jobs:
       - name: Execute java project
         run: java Test
 
-    run:
-      runs-on: ubuntu-latest
+  run:
+    runs-on: ubuntu-latest
 
-      steps:
-        - name: Cloning github repository
-          uses: actions/checkout@v7.0.0
+    steps:
+      - name: Cloning github repository
+        uses: actions/checkout@v7.0.0
   
-        - name: Install java application
-          uses: actions/setup-java@v5.5.0
-          with:
-            java-version: '17'
-            distribution: 'temurin'
+      - name: Install java application
+        uses: actions/setup-java@v5.5.0
+        with:
+          java-version: '17'
+          distribution: 'temurin'
   
-        - name: Compile java project
-          run: javac Test.java
+      - name: Compile java project
+        run: javac Test.java
   
-        - name: Execute java project
-          run: java Test
+      - name: Execute java project
+        run: java Test
             
         
